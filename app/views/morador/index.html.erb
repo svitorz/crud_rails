@@ -1,0 +1,10 @@
+<h1>Moradores</h1>
+
+<ul>
+  <% @morador.each do |morador| %>
+    <li>
+         <%= link_to morador.name, morador %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Novo Morador", new_morador_path %>

@@ -1,0 +1,23 @@
+<h1>Novo Morador</h1>
+
+<%= form_with model: @morador do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @morador.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :cidade_atual %><br>
+    <%= form.text_area :cidade_atual %>
+    <% @morador.errors.full_messages_for(:cidade_atual).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
