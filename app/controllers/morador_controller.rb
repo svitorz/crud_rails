@@ -20,6 +20,26 @@ class MoradorController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  def edit
+    @morador = Morador.find(params[:id])
+  end
+
+  def update
+    @morador = Morador.find(params[:id])
+
+    if @morador.update(morador_params)
+      redirect_to @morador
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @morador = Morador.find(params[:id])
+    @morador.destroy
+
+    redirect_to root_path, status: :see_other
+  end
 
   private
     def morador_params

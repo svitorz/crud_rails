@@ -1,3 +1,7 @@
 <h1><%= @morador.name %></h1>
 
 <p><%= @morador.cidade_atual %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_morador_path(@morador) %></li>
+</ul>
